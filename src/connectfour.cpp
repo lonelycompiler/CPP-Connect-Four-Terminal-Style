@@ -32,7 +32,18 @@ void print_board(std::vector<std::vector<Piece>>& board)
 
         for (int j = 0; j < board[0].size(); j++)
         {
-            std::cout << "|" << board[i][j].color << "|";
+            std::cout << "|" << get_player_str(board[i][j].color) << "|";
+        }
+        std::cout<< "\n";
+
+        if (i == board.size()-1)
+        {
+            for (int j = 0; j < board[0].size(); j++)
+            {
+                std::cout << "---";
+            }
+            
+            std::cout <<  "\n";
         }
     }
 }
@@ -43,6 +54,7 @@ std::vector<std::vector<Piece>> generate_empty_board(int size_x, int size_y)
     std::vector<std::vector<Piece>> board;
     for (int i = 0; i < size_x; i++)
     {
+        board.push_back(std::vector<Piece>());
         for (int j = 0; j < size_y; j++)
         {
             Piece temp;
