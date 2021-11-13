@@ -14,6 +14,12 @@ struct Piece
     Color color;
 };
 
+Color switch_player_colors(Color color);
+std::string get_player_str(Color color);
+std::string get_player_str(Color color);
+void print_board(std::vector<std::vector<Piece>>& board);
+int drop_piece(std::vector<std::vector<Piece>>& board, int& row, Color& color);
+
 /*
 class Board
 {
