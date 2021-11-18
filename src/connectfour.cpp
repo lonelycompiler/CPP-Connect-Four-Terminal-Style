@@ -59,7 +59,7 @@ bool did_player_win(int row, int col, std::vector<std::vector<Piece>>& board, Co
     int in_a_row = 0;
 
     // up to down vertical win checking
-    for (int i = row-3; i < row+3; i++)
+    for (int i = 0; i < board.size(); i++)
     {
         if ((in_a_row = in_a_row_check(in_a_row,i,col,board,color)) == 4) return true;
         /*
@@ -75,7 +75,7 @@ bool did_player_win(int row, int col, std::vector<std::vector<Piece>>& board, Co
     in_a_row = 0;
 
     // left to right horizontal win checking
-    for (int i = col-3; i < col+3; i++)
+    for (int i = 0; i < board[0].size(); i++)
     {
         if ((in_a_row = in_a_row_check(in_a_row,row,i,board,color)) == 4) return true;
         /*
@@ -91,7 +91,7 @@ bool did_player_win(int row, int col, std::vector<std::vector<Piece>>& board, Co
     in_a_row = 0;
 
     // diagonal win checking
-    for (int i = row-3, j = col-3; i < row+3 && j < col+3; i++, j++)
+    for (int i = 0, j = 0; i < board.size() && j < board[0].size(); i++, j++)
     {
         if ((in_a_row = in_a_row_check(in_a_row,i,j,board,color)) == 4) return true;
         /*
@@ -107,7 +107,7 @@ bool did_player_win(int row, int col, std::vector<std::vector<Piece>>& board, Co
 
     in_a_row = 0;
 
-    for (int i = row+3, j = col-3; i > row-3 && j < col+3; i--, j++)
+    for (int i = board.size()-1, j = 0; i >= 0 && j < board[0].size(); i--, j++)
     {
         if ((in_a_row = in_a_row_check(in_a_row,i,j,board,color)) == 4) return true;
         /*
