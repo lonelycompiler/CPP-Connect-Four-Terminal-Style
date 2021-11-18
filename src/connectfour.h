@@ -17,7 +17,11 @@ struct Piece
 Color switch_player_colors(Color color);
 std::string get_player_str(Color color);
 void print_board(std::vector<std::vector<Piece>>& board);
+std::vector<std::vector<Piece>> generate_empty_board(int size_x, int size_y);
 int get_next_available_col(std::vector<std::vector<Piece>> &board, int row);
+bool did_player_win(int row, int col, std::vector<std::vector<Piece>>& board, Color& color);
+bool is_board_full(std::vector<std::vector<Piece>>& board);
+int in_a_row_check(int count,int row, int col, std::vector<std::vector<Piece>>& board, Color& color);
 
 /*
 class Board
