@@ -152,6 +152,7 @@ void print_board(std::vector<std::vector<Piece>> &board)
         {
             std::cout << "| " << get_player_str(board[i][j].color) << " ";
         }
+
         std::cout << "|" << std::endl;
         std::cout << "\n";
 
